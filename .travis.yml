@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t Quraian/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true Quraian/docker-react npm run test -- --forceExit
