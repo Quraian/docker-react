@@ -5,7 +5,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t Quraian/docker-react -f Dockerfile.dev .
+  - docker build -t quraian/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true Quraian/docker-react npm run test -- --forceExit
+  - docker run -e CI=true quraian/docker-react npm run test -- --forceExit
